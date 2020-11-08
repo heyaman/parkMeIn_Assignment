@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./lib/css/style.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Playfair+Display&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- Title -->
+    <title>ParkMe</title>
+    <script>
+      $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $("#user tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+        });
+      });
+    </script>
+
+    <style>
+    .table {
+      align:center;
+      width:90%
+    }
+    </style>
+
+  </head>
+  <body Style="font-family: 'Arvo', serif;">
+  
+    <div class="container">
+      <h3 class="text-center m-3">ParkMe Out</h3>
+      <div class="active-pink-4 m-4">
+        <input class="form-control" type="text" id="myInput" placeholder="Search Your Vehicle ..." aria-label="Search">
+      </div>
+
+      <table class="table" id="user">
+        <tr>
+          <td>1</td>
+          <td>abc</td>
+          <td>def</td>
+          <td>123</td>
+          <td>ghi</td>
+          <td>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#conform">
+              Select Your Vehicle
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Conform Modal -->
+    <div class="modal fade" id="conform" tabindex="-1" aria-labelledby="conformLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="conformLabel">Conformation Message</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>ID - </p>
+            <p>Name - </p>
+            <p>Vehicle Number - </p>
+            <p>Vehicle Type - </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <a href="" class="btn btn btn-info w-40" data-toggle="modal" data-dismiss="modal" data-target="#success">Parked Out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="success" tabindex="-1" aria-labelledby="successLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="successLabel">Success Message</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Your Vehicle Parked Out Successfull !!</p>
+          </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom JS -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+   
+  </body>
+</html>
